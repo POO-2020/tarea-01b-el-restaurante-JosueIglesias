@@ -1,6 +1,7 @@
 import Precio from "./precio.js"
 import Producto from "./producto.js"
 import ElementoPedido from "./elemento-pedido.js"
+import Direccion from "./direccion.js"
 
 class Main {
     constructor(){
@@ -24,9 +25,17 @@ class Main {
         let pedido1 = new ElementoPedido(this.producto1, 4)
         console.log(pedido1.getDescripcion())
     }
+
+    probarDireccion(){
+        console.log("----------Direccion----------")
+        let direccion1 = new Direccion("Av. Gordolova", 442, 2, "Las lomas", 32448, "Villa de Alvarez", "Villa de Alvarez")
+        console.log(direccion1.getFormatoCorto())
+        console.log(direccion1.getFormatoExtendido())
+    }
 }
 
 let app = new Main
 app.probarPrecio()
 app.probarProducto()
 app.probarElementoPedido()
+app.probarDireccion()
