@@ -5,11 +5,14 @@ import Direccion from "./direccion.js"
 import Cliente from "./cliente.js"
 import Tiempo from "./tiempo.js"
 import Fecha from "./fecha.js"
+import Pedido from "./pedido.js"
 
 class Main {
     constructor(){
         this.producto1 = new Producto("Tortaogada estilo colimote", new Precio(49))
         this.direccion1 = new Direccion("Av. Gordolova", 442, 2, "Las lomas", 32448, "Villa de Alvarez", "Villa de Alvarez")
+        this.elementoPedido1 = new ElementoPedido(this.producto1, 4)
+        this.cliente1 = new Cliente("Enrique Pantoja", this.direccion1, "772-223-449")
     }
 
     probarPrecio(){
@@ -26,8 +29,8 @@ class Main {
 
     probarElementoPedido(){
         console.log("----------Elemento Pedido----------")
-        let pedido1 = new ElementoPedido(this.producto1, 4)
-        console.log(pedido1.getDescripcion())
+        //let pedido1 = new ElementoPedido(this.producto1, 4)
+        console.log(this.elementoPedido1.getDescripcion())
     }
 
     probarDireccion(){
@@ -39,8 +42,8 @@ class Main {
 
     probarCliente(){
         console.log("----------Cliente----------")
-        let cliente1 = new Cliente("Enrique Pantoja", this.direccion1, "772-223-449")
-        console.log(cliente1.getPerfil())
+        //let cliente1 = new Cliente("Enrique Pantoja", this.direccion1, "772-223-449")
+        console.log(this.cliente1.getPerfil())
     }
     
     probarTiempo(){
@@ -59,6 +62,13 @@ class Main {
         console.log(fecha1.getDias())
         console.log(fecha1.getDiaFecha())
     }
+
+    probarPedido(){
+        console.log("----------Pedido----------")
+        let pedido1 = new Pedido(new Fecha(2020, 4, 24), new Tiempo(1,50,"pm"), this.elementoPedido1, this.cliente1)
+        console.log(pedido1.getCostoTotal())
+        console.log(pedido1.getResumen())
+    }
 }
 
 let app = new Main
@@ -69,3 +79,4 @@ app.probarDireccion()
 app.probarCliente()
 app.probarTiempo()
 app.probarFecha()
+app.probarPedido()
