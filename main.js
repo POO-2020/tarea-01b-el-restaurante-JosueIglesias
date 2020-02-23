@@ -3,6 +3,7 @@ import Producto from "./producto.js"
 import ElementoPedido from "./elemento-pedido.js"
 import Direccion from "./direccion.js"
 import Cliente from "./cliente.js"
+import Tiempo from "./tiempo.js"
 
 class Main {
     constructor(){
@@ -40,6 +41,12 @@ class Main {
         let cliente1 = new Cliente("Enrique Pantoja", this.direccion1, "772-223-449")
         console.log(cliente1.getPerfil())
     }
+    
+    probarTiempo(){
+        console.log("----------Tiempo----------")
+        let hora1 = new Tiempo(4,12,"pm")
+        console.log(hora1.getFormato24())
+    }
 }
 
 let app = new Main
@@ -48,3 +55,4 @@ app.probarProducto()
 app.probarElementoPedido()
 app.probarDireccion()
 app.probarCliente()
+app.probarTiempo()
