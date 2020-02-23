@@ -4,6 +4,7 @@ import ElementoPedido from "./elemento-pedido.js"
 import Direccion from "./direccion.js"
 import Cliente from "./cliente.js"
 import Tiempo from "./tiempo.js"
+import Fecha from "./fecha.js"
 
 class Main {
     constructor(){
@@ -47,6 +48,17 @@ class Main {
         let hora1 = new Tiempo(4,12,"pm")
         console.log(hora1.getFormato24())
     }
+
+    probarFecha(){
+        console.log("----------Fecha----------")
+        let fecha1 = new Fecha(2004, 7, 18)
+        console.log(fecha1.getFecha())
+        console.log(fecha1.getAños())
+        console.log(fecha1.getMeses())
+        console.log(fecha1.getSemanas())
+        console.log(fecha1.getDias())
+        console.log(fecha1.getDiaFecha())
+    }
 }
 
 let app = new Main
@@ -56,3 +68,4 @@ app.probarElementoPedido()
 app.probarDireccion()
 app.probarCliente()
 app.probarTiempo()
+app.probarFecha()
