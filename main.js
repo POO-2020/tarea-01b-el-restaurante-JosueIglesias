@@ -68,6 +68,9 @@ class Main {
         let pedido1 = new Pedido(new Fecha(2020, 4, 24), new Tiempo(1,50,"pm"), this.elementoPedido1, this.cliente1)
         console.log(pedido1.getCostoTotal())
         console.log(pedido1.getResumen())
+        console.log(pedido1.getProductos())
+        pedido1.agregarElemento(this.producto1)
+        pedido1.listarElementos()
     }
 }
 

@@ -9,6 +9,7 @@ export default class Pedido {
         this.hora = hora
         this.elementoPedido = elementoPedido
         this.cliente = cliente
+        this.elementos = new Array
     }
 
     getResumen() {
@@ -17,5 +18,20 @@ export default class Pedido {
     getCostoTotal(){
         return`El costo total es: $${(this.elementoPedido.producto.precio.valor * this.elementoPedido.cantidad).toFixed(2)}`
     }
+    getProductos(){
+        return`El pedido tiene ${this.elementoPedido.cantidad} productos`
+    }
+    getNumeroElementos(){
+        return``
+    }
+    agregarElemento(elementoPedido){
+        this.elementos.push(elementoPedido)
+    }
 
+    listarElementos(){
+        this.elementos.forEach((elementoPedido, i) => {
+            console.log(`${i + 1} ${elementoPedido.getDescripcion()}`)
+        }
+        )
+    }
 }

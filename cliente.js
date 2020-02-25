@@ -10,4 +10,6 @@ export default class Cliente {
     getPerfil(){
         return`Nombre: ${this.nombre}, Direccion: ${this.direccion.getFormatoCorto()}, Telefono: ${this.telefono}`
     }
+
+    
 }
