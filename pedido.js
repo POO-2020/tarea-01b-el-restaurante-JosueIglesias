@@ -10,6 +10,7 @@ export default class Pedido {
         this.elementoPedido = elementoPedido
         this.cliente = cliente
         this.elementos = new Array
+        this.productos = new Array
     }
 
     getResumen() {
@@ -18,9 +19,7 @@ export default class Pedido {
     getCostoTotal(){
         return`El costo total es: $${(this.elementoPedido.producto.precio.valor * this.elementoPedido.cantidad).toFixed(2)}`
     }
-    getProductos(){
-        return`El pedido tiene ${this.elementoPedido.cantidad} productos`
-    }
+    
     getNumeroElementos(){
         return``
     }
@@ -34,4 +33,28 @@ export default class Pedido {
         }
         )
     }
-}
+
+    getProductos(){
+        let totalProductos = 0
+        this.elementos.forEach(elementoPedido => {
+            totalProductos = totalProductos + elementoPedido.cantidad
+        })
+        return `El pedido tiene ${totalProductos} productos`
+
+        
+        //while (n2 < n){
+        //    totalProductos = totalProductos + productosVector[n2]
+        //    n2++
+        //}
+        //return`El pedido tiene ${n} productos`
+        
+        /*{
+            productosVector[n + 1 ] = elementoPedido.cantidad
+            //totalProductos = totalProductos + elementoPedido.cantidad
+        })
+        while (n <= ){
+            totalProductos = totalProductos + productosVector[n] 
+        }
+        return`El pedido tiene ${totalProductos} productos`
+    }*/
+}}
